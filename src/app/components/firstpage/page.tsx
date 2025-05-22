@@ -36,12 +36,12 @@ export default function HeroSection() {
         <ArrowRight />
       </Link>
 
-      <div className="w-full max-w-6xl">
+      <div className="w-full max-w-4xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {Data.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col items-center p-4 rounded-lg hover:scale-105 transition-transform duration-500"
+              className=" flex flex-col items-center p-4 rounded-lg hover:scale-105 transition-transform duration-500"
             >
               <div className="w-full aspect-square rounded-lg overflow-hidden">
                 <Image
@@ -74,6 +74,7 @@ export default function HeroSection() {
 
         <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
           <button
+            id="black"
             onClick={() => handleColorChange("bg-black")}
             className={`flex items-center gap-2 px-4 py-2 rounded border-2 border-white hover:scale-105 transition-transform duration-500 ${
               backgroundColor === "bg-black" ? "text-white" : "text-white"
