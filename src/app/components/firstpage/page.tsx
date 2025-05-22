@@ -28,7 +28,9 @@ export default function HeroSection() {
 
       <Link
         href="/"
-        className="flex mb-8 text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className={`flex mb-8  hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 ${
+          isDarkBackground ? "text-blue-900" : "text-blue"
+        }`}
       >
         Learn More about Inner Resources
         <ArrowRight />
@@ -50,20 +52,22 @@ export default function HeroSection() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <p
-                className={`text-xl font-semibold text-center mt-4 ${
-                  isDarkBackground ? "text-white" : "text-white"
-                }`}
-              >
-                {item.title}
-              </p>
-              <p
-                className={`text-sm mt-2 text-center ${
-                  isDarkBackground ? "text-white/80" : "text-gray-500"
-                }`}
-              >
-                {item.description}
-              </p>
+              <div className="text-wrap">
+                <p
+                  className={`text-xl font-semibold  mt-4 ${
+                    isDarkBackground ? "text-white" : "text-white"
+                  }`}
+                >
+                  {item.title}
+                </p>
+                <p
+                  className={`text-sm mt-2  ${
+                    isDarkBackground ? "text-white/80" : "text-gray-500"
+                  }`}
+                >
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -71,7 +75,7 @@ export default function HeroSection() {
         <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
           <button
             onClick={() => handleColorChange("bg-black")}
-            className={`flex items-center gap-2 px-4 py-2 rounded border-2 border-black hover:scale-105 transition-transform duration-500 ${
+            className={`flex items-center gap-2 px-4 py-2 rounded border-2 border-white hover:scale-105 transition-transform duration-500 ${
               backgroundColor === "bg-black" ? "text-white" : "text-white"
             }`}
           >
@@ -84,7 +88,7 @@ export default function HeroSection() {
           </button>
           <button
             onClick={() => handleColorChange("bg-red-600")}
-            className={`flex items-center gap-2 px-4 py-2 rounded border-2 border-black hover:scale-105 transition-transform duration-500 ${
+            className={`flex items-center gap-2 px-4 py-2 rounded border-2 border-white hover:scale-105 transition-transform duration-500 ${
               backgroundColor === "bg-red-600" ? "text-white" : "text-white"
             }`}
           >
@@ -93,7 +97,7 @@ export default function HeroSection() {
           </button>
           <button
             onClick={() => handleColorChange("bg-green-600")}
-            className={`flex items-center gap-2 px-4 py-2 rounded border-2  border-black hover:scale-105 transition-transform duration-500 ${
+            className={`flex items-center gap-2 px-4 py-2 rounded border-2  border-white hover:scale-105 transition-transform duration-500 ${
               backgroundColor === "bg-green-600" ? "text-white" : "text-white"
             }`}
           >
@@ -102,7 +106,7 @@ export default function HeroSection() {
           </button>
           <button
             onClick={() => handleColorChange("bg-blue-600")}
-            className={`flex items-center gap-2 px-4 py-2 rounded border-2 h-[40px] border-black hover:ring-blue-400 hover:scale-105 transition-transform duration-500 ${
+            className={`flex items-center gap-2 px-4 py-2 rounded border-2 h-[40px] border-white hover:ring-blue-400 hover:scale-105 transition-transform duration-500 ${
               backgroundColor === "bg-blue-600" ? "text-white" : "text-white"
             }`}
           >
