@@ -20,7 +20,7 @@ export default function HeroSection() {
 
   return (
     <div
-      className={`w-full flex flex-col items-center px-4 py-12 ${backgroundColor}`}
+      className={`w-full min-h-screen flex flex-col items-center px-4 py-12 ${backgroundColor}`}
     >
       <h2 className="text-2xl md:text-3xl text-white font-semibold mb-4 text-center">
         Turn Collaboration into Innovation
