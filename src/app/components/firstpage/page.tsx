@@ -3,33 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ShoppingBasket, ArrowRight } from "lucide-react";
-
-const Data = [
-  {
-    id: 1,
-    image: "/2.jpg",
-    title: "Build As One Team",
-    description:
-      "Work seamlessly across your organization on a platform designed for collaboration.",
-  },
-  {
-    id: 2,
-    image: "/1.jpg",
-    title: "Transform your culture",
-    description:
-      "Embrace innersource, iterate faster, and ship more frequently using best tools from open source teams.",
-  },
-  {
-    id: 3,
-    image: "/3.jpg",
-    title: "Learn as you build",
-    description:
-      "Get insight into how your team builds today with community-backed KPIs",
-  },
-];
+import Data from "@/app/Data/data";
 
 export default function HeroSection() {
-  const [backgroundColor, setBackgroundColor] = useState("bg-white");
+  const [backgroundColor, setBackgroundColor] = useState("bg-black");
 
   const handleColorChange = (color: string) => {
     setBackgroundColor(color);
@@ -45,7 +22,7 @@ export default function HeroSection() {
     <div
       className={`w-full flex flex-col items-center px-4 py-12 ${backgroundColor}`}
     >
-      <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-center">
+      <h2 className="text-2xl md:text-3xl text-white font-semibold mb-4 text-center">
         Turn Collaboration into Innovation
       </h2>
 
@@ -75,7 +52,7 @@ export default function HeroSection() {
               </div>
               <p
                 className={`text-xl font-semibold text-center mt-4 ${
-                  isDarkBackground ? "text-white" : "text-black"
+                  isDarkBackground ? "text-white" : "text-white"
                 }`}
               >
                 {item.title}
@@ -94,42 +71,42 @@ export default function HeroSection() {
         <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
           <button
             onClick={() => handleColorChange("bg-black")}
-            className={`flex items-center gap-2 px-4 py-2 rounded border-2 border-black ${
-              backgroundColor === "bg-black" ? "text-white" : "text-black"
+            className={`flex items-center gap-2 px-4 py-2 rounded border-2 border-black hover:scale-105 transition-transform duration-500 ${
+              backgroundColor === "bg-black" ? "text-white" : "text-white"
             }`}
           >
             <ShoppingBasket
               className={
-                backgroundColor === "bg-black" ? "text-white" : "text-black"
+                backgroundColor === "bg-black" ? "text-white" : "text-white"
               }
             />
             <span>Black</span>
           </button>
           <button
             onClick={() => handleColorChange("bg-red-600")}
-            className={`flex items-center gap-2 px-4 py-2 rounded border-2 border-black ${
-              backgroundColor === "bg-red-600" ? "text-white" : "text-black"
+            className={`flex items-center gap-2 px-4 py-2 rounded border-2 border-black hover:scale-105 transition-transform duration-500 ${
+              backgroundColor === "bg-red-600" ? "text-white" : "text-white"
             }`}
           >
-            <ShoppingBasket className="text-black" />
+            <ShoppingBasket className="text-white" />
             <span>Red</span>
           </button>
           <button
             onClick={() => handleColorChange("bg-green-600")}
-            className={`flex items-center gap-2 px-4 py-2 rounded border-2  hover:ring-blue-400 ${
-              backgroundColor === "bg-green-600" ? "text-white" : "text-black"
+            className={`flex items-center gap-2 px-4 py-2 rounded border-2  border-black hover:scale-105 transition-transform duration-500 ${
+              backgroundColor === "bg-green-600" ? "text-white" : "text-white"
             }`}
           >
-            <ShoppingBasket className="text-black" />
+            <ShoppingBasket className="text-white" />
             <span>Green</span>
           </button>
           <button
             onClick={() => handleColorChange("bg-blue-600")}
-            className={`flex items-center gap-2 px-4 py-2 rounded border-2 h-[40px] border-black hover:ring-blue-400 ${
-              backgroundColor === "bg-blue-600" ? "text-white" : "text-black"
+            className={`flex items-center gap-2 px-4 py-2 rounded border-2 h-[40px] border-black hover:ring-blue-400 hover:scale-105 transition-transform duration-500 ${
+              backgroundColor === "bg-blue-600" ? "text-white" : "text-white"
             }`}
           >
-            <ShoppingBasket className="text-black" />
+            <ShoppingBasket className="text-white" />
             <span>Blue</span>
           </button>
         </div>
